@@ -56,6 +56,6 @@
 
 
 ## Links we discussed
-[Packer Builders](https://www.packer.io/docs/templates/builders.html)
-[Packer Post Processors](https://www.packer.io/docs/templates/post-processors.html)
+- [Packer Builders](https://www.packer.io/docs/templates/builders.html)
+- [Packer Post Processors](https://www.packer.io/docs/templates/post-processors.html)
 
