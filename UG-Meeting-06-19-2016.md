@@ -17,7 +17,7 @@
   - VirtualBox/VMWare Workstation
     - [VirtualBox](https://chocolatey.org/packages/virtualbox)
     - [VMWare Workstation](https://chocolatey.org/packages/vmwareworkstation)
-  - git Clone [Packer-Windows]() (opt)
+  - git clone [Packer-Windows](https://github.com/joefitzgerald/packer-windows) (opt)
     - Clone or download Archive
     - if download
       - Unblock-File
