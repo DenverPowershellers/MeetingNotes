@@ -5,6 +5,10 @@
 
 - Workstation setup
   - VSCode/Sublime/Notepad++/etc..
+    - [VSCode](https://code.visualstudio.com/)
+    - [Sublime](https://www.sublimetext.com/)
+    - [Notepad++](https://notepad-plus-plus.org/)
+
   - Chocolatey (opt)
   - Packer
   - git (opt)
