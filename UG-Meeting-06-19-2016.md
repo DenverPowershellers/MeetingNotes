@@ -8,13 +8,16 @@
     - [VSCode](https://code.visualstudio.com/)
     - [Sublime](https://www.sublimetext.com/)
     - [Notepad++](https://notepad-plus-plus.org/)
+    - [Atom](https://atom.io/)
 
-  - Chocolatey (opt)
-  - Packer
-  - git (opt)
-  - Vagrant
+  - [Chocolatey](https://chocolatey.org) (opt)
+  - [Packer](https://www.packer.io/)
+  - [git](https://chocolatey.org/packages/git) (opt)
+  - [Vagrant](https://www.vagrantup.com/)
   - VirtualBox/VMWare Workstation
-  - git Clone (opt)
+    - [VirtualBox](https://chocolatey.org/packages/virtualbox)
+    - [VMWare Workstation](https://chocolatey.org/packages/vmwareworkstation)
+  - git Clone [Packer-Windows]() (opt)
     - Clone or download Archive
     - if download
       - Unblock-File
