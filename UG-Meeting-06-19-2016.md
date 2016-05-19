@@ -52,8 +52,10 @@
 1. Navigate to the packer-windows repo
   - `cd ~\packer-windows`
 2. do your initial packer run
-  - `packer build -only virtualbox-iso .\windows_2012_r2.json
+  - `packer build -only virtualbox-iso .\windows_2012_r2.json`
 
 
 ## Links we discussed
 [Packer Builders](https://www.packer.io/docs/templates/builders.html)
+[Packer Post Processors](https://www.packer.io/docs/templates/post-processors.html)
+
