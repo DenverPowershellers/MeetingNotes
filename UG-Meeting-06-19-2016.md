@@ -61,3 +61,4 @@
 - Another great packer for windows repository [packer-templates](https://github.com/mwrock/packer-templates)
   - Great blog post by Matt Wrock on this particular repo: [HurryUpAndWait](http://www.hurryupandwait.io/blog/creating-windows-base-images-for-virtualbox-and-hyper-v-using-packer-boxstarter-and-vagrant)
 
+
