@@ -62,7 +62,7 @@ Chocolatey, and Nuget, both allow you to host your own feeds internally to your 
   * Important note, chocolatey.org is not allowed to host third party binaries
     * All packages published on the gallery must download required binaries on their own
   * Your own packages can bundle binaries
-  * [Qucik Start Guide](https://github.com/chocolatey/choco/wiki/CreatePackagesQuickStart)
+  * [Quick Start Guide](https://github.com/chocolatey/choco/wiki/CreatePackagesQuickStart)
 * [Automatic Packages](https://chocolatey.org/docs/automatic-packages)
 
 ## Creating a package
