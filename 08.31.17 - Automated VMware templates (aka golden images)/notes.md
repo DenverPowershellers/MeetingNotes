@@ -1,5 +1,5 @@
 Managing Windows VMware templates in an environment of multiple vCenters can be difficult. Sure it's possible to script out the management of them with PowerCLI, whether it be to spin them up once a month to patch or to update tools. However, in time there's opportunity for them to drift from one another and sooner or later you have these precious templates that you can't remember what you did to get them to sysprep with WMF5 installed (true story). Enter Packer, with Packer we can store a template's entire configuration in just a few version controlled files. Better yet, we can regenerate templates from scratch whenever we want. 
 
-At this Meetup we'll discuss how to use Hashi Corp's Packer to generate Windows VMware templates and the supporting PowerShell used in both the build process and packer handling. If you're interested in getting a jump-start, check out joeypiccola/packer-vmware-templates. 
+At this Meetup we'll discuss how to use Hashi Corp's Packer to generate Windows VMware templates and the supporting PowerShell used in both the build process and packer handling. If you're interested in getting a jump-start, check out [joeypiccola/packer-vmware-templates](https://github.com/joeypiccola/packer-vmware-templates). 
 
 Time allowing, we'll also discuss additional uses for Packer outside VMware and templates.
