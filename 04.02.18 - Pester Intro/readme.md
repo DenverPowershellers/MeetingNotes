@@ -1,0 +1,1 @@
+At this meetup we'll discuss Pester, a testing framework for PowerShell. We'll start by discussing the methodology behind and benefits of writing tests for your code, then review the parts\syntax of Pester, and finish up with an example focused on unit testing. This is a large topic that we'll likely build on and revisit in future Meetups.
