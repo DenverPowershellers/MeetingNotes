@@ -66,7 +66,7 @@ Paste the following into your `keybindings.json` file:
 
 That will set `Ctrl + r + Ctrl + r` (`Ctrl + r` twice in a row) as your keybinding for the `add_region` snippet.
 
-![Screenshot](https://i.imgur.com/DMo65wM.gifv)
+![Screenshot](https://i.imgur.com/DMo65wM.gif)
 
 # Additional Resources
 There are a ton of Visual Studio Code resources out there.  Here't Microsoft's official Tips and Tricks page:
