@@ -23,9 +23,11 @@ On 05/07/2018 we demo'd Visual Studio Code.  We went over:
 *Thanks to [Justin D](https://www.meetup.com/members/188309832/) for submitting this.*
 
 Open up `Configure User Snippets` with the Command Pallet `Ctrl + Shift + P` or `F1` and select `Preferences: Configure User Snippets`.
+
 ![Screenshot](https://i.imgur.com/VfCaLbh.png)
 
 Select powershell
+
 ![Screenshot](https://i.imgur.com/TEvWuuC.png_)
 
 Add the following code to your `powershell.json` snippet file:
@@ -43,9 +45,11 @@ Add the following code to your `powershell.json` snippet file:
 ```
 
 Optional: Add keybinding to the new snippet.  Open `Preferences: Open Keyboard Shortcuts`
+
 ![Screenshot](https://i.imgur.com/5zkZ3yK.png)
 
 Click `For advanced customizations open and edit keybindings.json`.
+
 ![Screenshot](https://i.imgur.com/JrPoHvY.png)
 
 Paste the following into your `keybindings.json` file:
