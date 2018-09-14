@@ -1,0 +1,29 @@
+---
+# General Settings
+my_group: demos
+my_user: demo
+my_ssh_pub_key_path: ~/.ssh/id_rsa.pub
+# Note - my_password: < encrypted in vault file >
+
+# Windows and Windows VM settings
+windows:
+  vm_name: ansibleDemoWin01
+  vm_size: Standard_B2s
+  image:
+    offer: WindowsServer
+    publisher: MicrosoftWindowsServer
+    sku: 2016-Datacenter
+    version: latest
+
+website:
+  path: "C:\\inetpub\\wwwroot\\demo"
+
+# Linux and Linux VM settings
+linux:
+  vm_name: ansibleDemoLinux01
+  vm_size: Standard_B1s
+  image:
+    offer: UbuntuServer
+    publisher: Canonical
+    sku: 18.04-LTS
+    version: latest

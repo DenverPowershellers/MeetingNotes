@@ -1,0 +1,13 @@
+- name: Activate IIS
+  win_feature:
+    name: "Web-Server"
+    state: present
+    restart: no
+    include_sub_features: yes
+    include_management_tools: no
+- name: Create Website in IIS
+  win_iis_website:
+    name: Demo
+    state: started
+    port: 80
+    physical_path: "{{ website.path }}"

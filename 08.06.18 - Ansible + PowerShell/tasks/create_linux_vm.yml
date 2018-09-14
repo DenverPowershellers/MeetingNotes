@@ -1,0 +1,18 @@
+---
+- name: Create Ubuntu VM
+  azure_rm_virtualmachine:
+    resource_group: "{{ my_group }}"
+    name: "{{ linux.vm_name }}"
+    vm_size: "{{ linux.vm_size }}"
+    admin_username: "{{ my_user }}"
+    ssh_password_enabled: false
+    ssh_public_keys: 
+      - path: "/home/{{ my_user }}/.ssh/authorized_keys"
+        key_data: "{{ lookup('file', my_ssh_pub_key_path) }}"
+        # todo: mkd - remove this hardcoded value
+        #key_data: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDLsJSeCw7bC4DI6ijU0ACb4YaPH5dmXGD3ip9cGv5DQrCm01ay5iDvym2sozs2/N/7A+9vh/ATsike3QPDGK8ChSbIFjVxneMsjRTDK7s2ztj3d/NG0qaKG7Ic6JrzcB3EQjC7dQYRviW1SU8HYDNwJCy3/Kn07zqGeEErUGKaYRMh8wN6y2y14EkPU24bLZ3PRmH7JPPE6w3Gtj7Fjqaqv765dQR1Dmx+TmnQuIAHfRvM2cSs8AxZzZNkz0wT2zsRHrCMNVPzI3B19RYA0MOwG3bZUbvpgv9CWWLHMp6Uy6nH4vo0GtX/coypZjtaIF/EH/VhvGjwbj7dK6Sx7R15 mdeangelo272"
+    image:
+      offer: "{{ linux.image.offer }}"
+      publisher: "{{ linux.image.publisher }}"
+      sku: "{{ linux.image.sku }}"
+      version: "{{ linux.image.version }}"
