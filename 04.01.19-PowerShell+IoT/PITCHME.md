@@ -9,6 +9,8 @@
 - PowerShell IoT vs Windows IoT Core.
 - The modules.
 - The Bosch BME280
+- Demo
+- Workshop
 
 ---
 
@@ -67,6 +69,15 @@ Function     Get-BME280Device  0.1.0    Microsoft.PowerShell.IoT.BME280
 - temperature
 - pressure
 - humidity
+
+
+---
+
+### TI TMP102
+
+[Jeremy McGee's TMP102 module](https://github.com/jeremymcgee73/PowerShell.IoT.TMP102)
+[TMP102 datasheet](https://www.sparkfun.com/datasheets/Sensors/Temperature/tmp102.pdf)
+[python example](https://www.allaboutcircuits.com/projects/transmit-temperature-with-raspberry-pi/)
 
 ---
 
