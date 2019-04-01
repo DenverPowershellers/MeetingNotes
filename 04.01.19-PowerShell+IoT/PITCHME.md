@@ -8,7 +8,7 @@
 - Introduction.
 - PowerShell IoT vs Windows IoT Core.
 - The modules
--
+- The Bosch BME280
 - Roles.
 
 ---
@@ -40,6 +40,17 @@ Cmdlet       Set-GpioPin      0.1.1    Microsoft.PowerShell.IoT
 Cmdlet       Set-I2CRegister  0.1.1    Microsoft.PowerShell.IoT
 ```
 
+---
+
+### I2C
+
+> I2C is a multi-device bus used to connect low-speed peripherals to computers and embedded systems.
+
+---
+
+### Bosch BME280
+
+![bme280](assets/image/bme280.jpg)
 
 ---
 
