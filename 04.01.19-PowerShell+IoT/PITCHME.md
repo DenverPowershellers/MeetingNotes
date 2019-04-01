@@ -7,13 +7,14 @@
 
 - Introduction.
 - PowerShell IoT vs Windows IoT Core.
-- The modules
+- The modules.
 - The Bosch BME280
-- Roles.
 
 ---
 
 ### PowerShell IoT
+
+PowerShell IoT is still in Preview. What we do today is all just fo fun!
 
 > A PowerShell module for interacting with hardware sensors and devices using common protocols: GPIO, I2C & SPI.
 
@@ -40,6 +41,17 @@ Cmdlet       Set-GpioPin      0.1.1    Microsoft.PowerShell.IoT
 Cmdlet       Set-I2CRegister  0.1.1    Microsoft.PowerShell.IoT
 ```
 
+### Microsoft.PowerShell.IoT.BME280
+
+```powershell
+Get-Command -Module Microsoft.PowerShell.IoT.BME280
+CommandType  Name              Version  Source
+-----------  ----              -------  ------
+Function     Get-BME280ChipID  0.1.0    Microsoft.PowerShell.IoT.BME280
+Function     Get-BME280Data    0.1.0    Microsoft.PowerShell.IoT.BME280
+Function     Get-BME280Device  0.1.0    Microsoft.PowerShell.IoT.BME280
+```
+
 ---
 
 ### I2C
@@ -51,6 +63,10 @@ Cmdlet       Set-I2CRegister  0.1.1    Microsoft.PowerShell.IoT
 ### Bosch BME280
 
 ![bme280](https://www.digikey.com/-/media/Images/Product%20Highlights/B/BOSCH/BME280%20Integrated%20Environmental%20Units/bosch-bme280-200.jpg?ts=12c422e4-7dde-47c0-935e-30198d891346&la=en-US)
+
+- temperature
+- pressure
+- humidity
 
 ---
 
