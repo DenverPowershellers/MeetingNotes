@@ -74,7 +74,8 @@ Function     Get-BME280Device  0.1.0    Microsoft.PowerShell.IoT.BME280
 
 Lets build an environmental sensor. PowerShell IoT is still in Preview. What we do today is all just fo fun!
 
-Technologies touched.
+@size[25px](Technologies used.)
+
 - Raspberry Pi 3 Model B+
 - PowerShell Core (pwsh)
 - PowerShell IoT Module
