@@ -14,8 +14,6 @@
 
 ### PowerShell IoT
 
-PowerShell IoT is still in Preview. What we do today is all just fo fun!
-
 > A PowerShell module for interacting with hardware sensors and devices using common protocols: GPIO, I2C & SPI.
 
 ---
@@ -40,6 +38,8 @@ Cmdlet       Send-SPIData     0.1.1    Microsoft.PowerShell.IoT
 Cmdlet       Set-GpioPin      0.1.1    Microsoft.PowerShell.IoT
 Cmdlet       Set-I2CRegister  0.1.1    Microsoft.PowerShell.IoT
 ```
+
+---
 
 ### Microsoft.PowerShell.IoT.BME280
 
@@ -67,6 +67,20 @@ Function     Get-BME280Device  0.1.0    Microsoft.PowerShell.IoT.BME280
 - temperature
 - pressure
 - humidity
+
+---
+
+### Demo
+
+Lets build an environmental sensor. PowerShell IoT is still in Preview. What we do today is all just fo fun!
+
+Technologies touched.
+- Raspberry Pi 3 Model B+
+- PowerShell Core (pwsh)
+- PowerShell IoT Module
+- Docker & Docker Compose
+- Grafana
+- InfluxDB
 
 ---
 
