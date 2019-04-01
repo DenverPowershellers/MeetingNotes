@@ -50,7 +50,7 @@ Cmdlet       Set-I2CRegister  0.1.1    Microsoft.PowerShell.IoT
 
 ### Bosch BME280
 
-![bme280](assets/image/bme280.jpg)
+![bme280](https://www.digikey.com/-/media/Images/Product%20Highlights/B/BOSCH/BME280%20Integrated%20Environmental%20Units/bosch-bme280-200.jpg?ts=12c422e4-7dde-47c0-935e-30198d891346&la=en-US)
 
 ---
 
