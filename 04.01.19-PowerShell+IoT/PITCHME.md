@@ -13,19 +13,32 @@
 
 ---
 
-### PowerShell IoT vs Windows IoT Core
+### PowerShell IoT
 
 > A PowerShell module for interacting with hardware sensors and devices using common protocols: GPIO, I2C & SPI.
+
+---
+
+### Windows IoT Core
 
 > Windows 10 IoT Core is a version of Windows 10 that is optimized for smaller devices with or without a display that run on both ARM and x86/x64 devices.
 
 ---
 
-### Modules
+### Microsoft.PowerShell.IoT
 
----
-
-### Inventory
+```powershell
+Install-Module Microsoft.PowerShell.IoT
+Get-Command -Module Microsoft.PowerShell.IoT
+CommandType  Name             Version  Source
+-----------  ----             -------  ------
+Cmdlet       Get-GpioPin      0.1.1    Microsoft.PowerShell.IoT
+Cmdlet       Get-I2CDevice    0.1.1    Microsoft.PowerShell.IoT
+Cmdlet       Get-I2CRegister  0.1.1    Microsoft.PowerShell.IoT
+Cmdlet       Send-SPIData     0.1.1    Microsoft.PowerShell.IoT
+Cmdlet       Set-GpioPin      0.1.1    Microsoft.PowerShell.IoT
+Cmdlet       Set-I2CRegister  0.1.1    Microsoft.PowerShell.IoT
+```
 
 
 ---
