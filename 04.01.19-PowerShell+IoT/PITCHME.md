@@ -5,9 +5,9 @@
 
 ### Agenda
 
-- Introduction.
-- PowerShell IoT vs Windows IoT Core.
-- The modules.
+- Introduction
+- PowerShell IoT vs Windows IoT Core
+- The modules
 - The Bosch BME280
 - Demo
 - Workshop
@@ -60,6 +60,8 @@ Function     Get-BME280Device  0.1.0    Microsoft.PowerShell.IoT.BME280
 
 > I2C is a multi-device bus used to connect low-speed peripherals to computers and embedded systems.
 
+[more info](https://learn.sparkfun.com/tutorials/i2c)
+
 ---
 
 ### Bosch BME280
@@ -83,7 +85,7 @@ Function     Get-BME280Device  0.1.0    Microsoft.PowerShell.IoT.BME280
 
 ### Demo
 
-Lets build an environmental sensor. PowerShell IoT is still in Preview. What we do today is all just fo fun!
+Lets build an environmental sensor. PowerShell IoT is still in Preview. What we do today is all just for fun!
 
 @size[25px](Technologies used.)
 
