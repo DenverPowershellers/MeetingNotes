@@ -46,6 +46,15 @@ Scheduling in cron.
 ```
 
 ### Python
+Example below used as an input for telegraf
+
+```ini
+[[inputs.exec]]
+ command = "/home/pi/bme280.py"
+ data_format = "json"
+ name_suffix = "_pi0a_crawl_space"
+```
+
 ```python
 #!/usr/bin/env python3
 
@@ -56,14 +65,11 @@ import board
 import busio
 import adafruit_bmp280
 import sys
-#sys.path.append('/home/pi/.local/lib/python3.5/site-packages')
 
 i2c = busio.I2C(board.SCL, board.SDA)
 # pass address 0x76 to override default 0x77
 bmp280 = adafruit_bmp280.Adafruit_BMP280_I2C(i2c,address=0x76)
-#print("Temperature: %0.1f F" % ((bmp280.temperature * 1.8) + 32))
 
-#hostname = socket.gethostname()
 temp = "%0.2f" % ((bmp280.temperature * 1.8) + 32)
 
 data = {"temperature": float(temp)}
