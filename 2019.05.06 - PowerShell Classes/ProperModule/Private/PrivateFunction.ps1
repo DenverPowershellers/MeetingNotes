@@ -1,0 +1,3 @@
+function PrivateFunction {
+    "Privacy please!"
+}
