@@ -1,7 +1,7 @@
 # PowerShell Module Development
 
 ## lets see this in action first
-Check out [PSPuppetOrchestrator](https://github.com/joeypiccola/PSPuppetOrchestrator) that leverages what is arguably a hacked together set of psake tasks lifted from all over the place (i.e. [devblackops](https://twitter.com/devblackops)), though 100% functional :).
+Check out [PSPuppetOrchestrator](https://github.com/joeypiccola/PSPuppetOrchestrator) that leverages what is arguably a hacked together set of psake tasks (by me [joeypicola](https://github.com/joeypiccola)) lifted from all over the place (i.e. [devblackops](https://twitter.com/devblackops)), though 100% functional :).
 
 ## plaster
 
