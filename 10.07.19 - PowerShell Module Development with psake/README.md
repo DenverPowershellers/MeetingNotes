@@ -31,9 +31,25 @@ Invoke a specific psake task.
 Invoke-psake -buildFile ./psakeFile.ps1 -taskList hi
 ```
 
-Invoke a specific psake task with dependencies.
+Invoke a specific psake task that has dependencies.
 ```powershell
 Invoke-psake -buildFile ./psakeFile.ps1 -taskList test
+```
+
+Use `Get-PSakeScriptTasks` to get a list of tasks in a `psakeFile.ps1`.
+```powershell
+Get-PSakeScriptTasks -buildFile ./psakeFile.ps1
+```
+
+Common task pattern / dependency tree to follow (i.e. we'll see this with PowerShellBuild's psake tasks).
+```
+Init       - output build variables
+Clean      - remove the contents of our dedicated build output directory
+StageFiles - copy of readme markdown file
+BuildHelp  - call PlatyPS and build markdown  help
+Build      - copy public and private functions to dedicated build output directory
+Pester     - run pester tests against build output files
+Analyze    - run powershell script analyzer against build output files
 ```
 
 ## PowerShellBuild
@@ -44,7 +60,7 @@ Example showing the `clean` task being loaded form the PowerShellBuild module.
 task clean -FromModule PowerShellBuild -Version '0.3.0'
 ```
 
-Invoke psake's clean task loaded from the PowerShellBuild module.
+Invoke psake's clean task as loaded from the PowerShellBuild module.
 ```powershell
 cd powershellbuild
 Invoke-psake -buildFile ./psakeFile.ps1 -taskList clean
@@ -52,16 +68,26 @@ Invoke-psake -buildFile ./psakeFile.ps1 -taskList clean
 
 ### limitations
 This is new and currently under development. There are bugs, things don't always work :(.
-- issues with adding dependencies to PowerShellBuild psake tasks from custom tasks
-- "overrides" do not work as expected
-
+- `$PSBPreference.Build.Dependencies` does not work if you want to add additional dependencies to psakes's `build` task.
+- the workaround for the above issue is to explicitly define `-depends` for the PowerShellBuild task you wish to modify the dependencies on. See below.
+```
+task Build -FromModule PowerShellBuild -depends @('StageFiles','BuildHelp','myCustomBuildTask')
+```
+However, the issue with this is that you can only do it once / it only works at overriding the default dependencies on one task loaded from a module.
+```
+task Build -FromModule PowerShellBuild -depends @('StageFiles','BuildHelp','myCustomBuildTask')
+task Test -FromModule PowerShellBuild -depends @('Analyze','Pester','UploadTestResults')
+task UploadTestResults -depends pester {"    upload me some test results"}
+```
 
 ## build.ps1
-The file `build.ps1` is a common name used as an entry point or initiator script to kicking things off that require building. `build.ps1` can be used to load prerequisites and kick off things like `Invoke-psake`. The `build.ps1` discussed here was provided as part of the stucco plaster template.
+The file `build.ps1` is a common name used as an entry point or initiator script to kick things off that require building. `build.ps1` can be used to load prerequisites and kick off things like `Invoke-psake`. The `build.ps1` discussed here was provided as part of the stucco plaster template.
+
+The stucco generated `build.ps1` we'll use today features a `-bootstrap` param that automatically reviews all build dependencies (e.g. other PowerShell modules) listed in `requirements.psd1` and installs them. This functionality under the hood is leveraging [psdepend](https://github.com/RamblingCookieMonster/PSDepend). The `-bootstrap` param must only be run once during the initial build.
 
 ## stucco generated module leveraging psake and PowerShellBuild
 
-run a build
+Run a build by calling `./build.ps1`.
 ```powershell
 cd stucco/myModule
 ./build.ps1 -Bootstrap
