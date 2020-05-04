@@ -1,4 +1,4 @@
-# install stucco
+# install plaster
 
 ```powershell
 cd C:\workspace
