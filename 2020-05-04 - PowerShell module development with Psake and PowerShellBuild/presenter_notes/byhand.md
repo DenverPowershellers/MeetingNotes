@@ -1,0 +1,125 @@
+
+# create files
+
+```powershell
+New-Item -ItemType Directory -Path 'C:\workspace\myNewModule'
+New-Item -ItemType Directory -Path 'C:\workspace\myNewModule\Public'
+New-Item -ItemType Directory -Path 'C:\workspace\myNewModule\Private'
+New-Item -ItemType Directory -Path 'C:\workspace\myNewModule\Tests'
+$psm1Content = @"
+# Dot source public/private functions
+`$public  = @(Get-ChildItem -Path (Join-Path -Path `$PSScriptRoot -ChildPath 'Public/*.ps1')  -Recurse -ErrorAction Stop)
+`$private = @(Get-ChildItem -Path (Join-Path -Path `$PSScriptRoot -ChildPath 'Private/*.ps1') -Recurse -ErrorAction Stop)
+foreach (`$import in @(`$public + `$private)) {
+    try {
+        . `$import.FullName
+    }
+    catch {
+        throw "Unable to dot source [`$(`$import.FullName)]"
+    }
+}
+Export-ModuleMember -Function `$public.Basename
+"@
+New-Item -ItemType File -Path 'C:\workspace\myNewModule\myNewModule.psm1'
+Add-Content -Path 'C:\workspace\myNewModule\myNewModule.psm1' -Value $psm1Content
+New-ModuleManifest -Path 'C:\workspace\myNewModule\myNewModule.psd1' -ModuleVersion "1.0.2" -Author "YourNameHere"
+```
+
+# update manifest missing bits
+
+`myNewModule.psd1`
+
+```powershell
+RootModule = 'myNewModule.psm1'
+Description = 'myNewModule'
+```
+
+# make some functions
+
+`Public\Get-Something.ps1`
+
+```powershell
+function Get-Something {
+    GetSomething
+}
+```
+
+`Private\GetSomething.ps1`
+
+```powershell
+function GetSomething {
+    Write-Output 'you got something'
+}
+```
+
+# make some tests
+
+`Tests\GetSomething.Tests.ps1`
+
+```powershell
+$moduleName = 'myNewModule'
+$moduleFile = "$moduleName.psm1"
+$moduleFilePath = "$PSScriptRoot\..\$ModuleFile"
+Remove-Module $moduleName -Force -ErrorAction SilentlyContinue
+Import-Module $ModuleFilePath
+
+Describe 'Get-Something' {
+    function GetSomething {}
+    context 'returns something as expected' {
+        it "should return you got something" {
+            Get-Something | should -be 'you got something'
+        }
+    }
+}
+```
+
+`Tests\GetSomething.Tests.ps1`
+
+```powershell
+$moduleName = 'myNewModule'
+$moduleFile = "$moduleName.psm1"
+$moduleFilePath = "$PSScriptRoot\..\$ModuleFile"
+Remove-Module $moduleName -Force -ErrorAction SilentlyContinue
+Import-Module $ModuleFilePath
+
+InModuleScope myNewModule {
+    Describe 'GetSomething' {
+        context 'returns something as expected' {
+            it "should return you got something" {
+                GetSomething | should -be 'you got something'
+            }
+        }
+    }
+}
+```
+
+# update manifest FunctionsToExport
+
+```powershell
+Update-ModuleManifest -Path .\myNewModule.psd1 -FunctionsToExport 'get-something'
+```
+
+# test
+
+```powershell
+Invoke-Pester
+```
+
+# analyze
+
+```powershell
+Invoke-ScriptAnalyzer -Recurse -Path ./
+```
+
+# publish
+
+```powershell
+Publish-Module -Path ./ -NuGetApiKey $env:PSGALLERY_API_KEY -Repository PSGallery
+```
+
+# move
+
+```powershell
+cd c:\workspace
+mv ./mynewmodule ./mynewmodule-byhand
+```
