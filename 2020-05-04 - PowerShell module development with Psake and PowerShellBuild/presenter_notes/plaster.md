@@ -22,15 +22,16 @@ Copy-Item .\mynewmodule-byhand\Tests\ .\myNewModule\ -Force -Recurse
 Description = 'myNewModule'
 ```
 
-# add functions to module file
+# make some functions
 
-```
-function GetSomething {
-    Write-Output 'you got something'
-}
+`myNewModule.psm1`
 
+```powershell
 function Get-Something {
     GetSomething
+}
+function GetSomething {
+    Write-Output 'you got something'
 }
 ```
 
