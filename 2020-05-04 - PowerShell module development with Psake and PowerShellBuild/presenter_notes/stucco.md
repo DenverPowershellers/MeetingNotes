@@ -33,7 +33,7 @@ Copy-Item -Recurse -Path .\mynewmodule-powershellbuild\myNewModule\private\getso
 Copy-Item -Recurse -Path .\mynewmodule-powershellbuild\tests\GetSomething.Tests.ps1 .\myNewModule\tests\
 Copy-Item -Recurse -Path .\mynewmodule-powershellbuild\tests\Get-Something.Tests.ps1 .\myNewModule\tests\
 Remove-Item .\myNewModule\myNewModule\Public\Get-HelloWorld.ps1
-Remove-Item .\myNewModule\myNewModule\Private\Get-HelloWorld.ps1
+Remove-Item .\myNewModule\myNewModule\Private\GetHelloWorld.ps1
 ```
 
 # invoke psake
@@ -50,7 +50,7 @@ invoke-psake
 
 Ensure imported module is from `outputdir`. remove `workflow` on line 13
 
-replace `3-11` with...
+replace `4-12` with...
 
 ```powershell
 Get-Module $env:BHProjectName | Remove-Module -Force
