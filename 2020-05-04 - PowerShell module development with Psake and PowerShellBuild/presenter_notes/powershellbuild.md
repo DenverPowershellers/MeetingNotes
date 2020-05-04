@@ -1,7 +1,7 @@
 # install powershellbuild
 
 ```powershell
-install-module powershellbuild -MinimumVersion 0.4.0
+install-module powershellbuild
 ```
 
 # make a psake file
@@ -9,7 +9,7 @@ install-module powershellbuild -MinimumVersion 0.4.0
 ```powershell
 task default -depends Test
 
-task Test -FromModule PowerShellBuild -Version '0.4.0'
+task Test -FromModule PowerShellBuild
 ```
 
 # refactor a bit
@@ -58,7 +58,7 @@ invoke-psake
 ```
 
 - discuss buildHelpers
-- discuss output directory and versied output directory
+- discuss output directory and versioned output directory
 - discuss automatic functions to export
 - discuss markdown docs
 

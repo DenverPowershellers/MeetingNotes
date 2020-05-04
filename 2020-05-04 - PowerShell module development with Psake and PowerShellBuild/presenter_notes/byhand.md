@@ -34,7 +34,7 @@ function GetSomething {
 
 # make some tests
 
-`Tests\GetSomething.Tests.ps1`
+`Tests\Get-Something.Tests.ps1`
 
 ```powershell
 $moduleName = 'myNewModule'

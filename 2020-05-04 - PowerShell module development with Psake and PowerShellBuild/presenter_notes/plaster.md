@@ -1,6 +1,7 @@
 # install stucco
 
 ```powershell
+cd C:\workspace
 Install-Module Plaster
 ```
 

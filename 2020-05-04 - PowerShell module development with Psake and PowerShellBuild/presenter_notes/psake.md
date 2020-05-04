@@ -21,7 +21,7 @@ task manifest {
     Update-ModuleManifest -Path .\myNewModule.psd1 -FunctionsToExport 'Get-Something'
 }
 
-task pester -depends analyze, manifest {
+task pester {
     Invoke-Pester
 }
 

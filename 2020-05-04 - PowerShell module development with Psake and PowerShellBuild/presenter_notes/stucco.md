@@ -1,6 +1,7 @@
 # install stucco
 
 ```powershell
+cd c:\workspace
 Install-Module Stucco
 ```
 
