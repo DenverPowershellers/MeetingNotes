@@ -1,3 +1,9 @@
+# install stucco
+
+```powershell
+Install-Module Plaster
+```
+
 # plaster template
 
 ```powershell

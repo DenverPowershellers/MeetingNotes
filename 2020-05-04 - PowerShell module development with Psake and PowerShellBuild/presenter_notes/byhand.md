@@ -6,7 +6,8 @@ New-Item -ItemType Directory -Path 'C:\workspace\myNewModule'
 New-Item -ItemType Directory -Path 'C:\workspace\myNewModule\Public'
 New-Item -ItemType Directory -Path 'C:\workspace\myNewModule\Private'
 New-Item -ItemType Directory -Path 'C:\workspace\myNewModule\Tests'
-New-ModuleManifest -Path 'C:\workspace\myNewModule\myNewModule.psd1' -ModuleVersion "1.0.2" -Author "YourNameHere"
+New-ModuleManifest -Path 'C:\workspace\myNewModule\myNewModule.psd1' -ModuleVersion "2.0.0" -Author "YourNameHere"
+cd C:\workspace
 ```
 
 # update manifest missing bits
